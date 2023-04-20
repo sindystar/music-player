@@ -50,4 +50,46 @@ prev.addEventListener("click", () => {
   initMusic();
   num++;
   frame.style.transform = `rotate(${num * dog}deg)`;
+  //아티클은 8개 - lists 배열에는 [0,1,2,3,4,5,6,7];
+  //7,6,5,4,3,2,1,0 -> 7,6,5,4,3,2,1,0
+  //현재 활성화 article순서값 결정 
+  if (active == 0) {
+    active = len;
+  } else {
+    active--;
+  }
+
+  activation(lists, active);
+
+  //3항 연산자 
+  // (active == 0) ? active = len : active--;
+});
+
+next.addEventListener("click", () => {
+  initMusic();
+  num--;
+  frame.style.transform = `rotate(${num * deg}deg)`;
+
+  //0,1,2,3,4,5,6,7 -> 0,1,2,3,4,5,6,7
+  if (active == len) {
+    active = 0;
+  } else {
+    active++;
+  }
+  activation(lists, active);
 })
+
+//활성화 함수 
+function activation(arr, index) {
+  for (let el of arr) el.classList.remove("on");
+  arr[index].classList.add("on");
+}
+
+function initMusic() {
+  for (let el of audio) {
+    el.pause();
+    el.load();
+    //on을 제거해서 빙빙 돌고 있는 원반을 멈추기 
+    el.closest("article").querySelector(".pic").classList.remove("on");
+  }
+}
