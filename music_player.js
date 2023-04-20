@@ -29,7 +29,7 @@ for (let el of lists) {
 
     if (isActive) {
       //클릭한 타겟의(이벤트리스터가 붙은 대상)가장 가까이 있는 아티클을 찾은후, 그안에 있는 .pic찾고 여기에 on을 붙인다
-      e.currentTarget.closest("article").querySelector("pic").classList.add("on");
+      e.currentTarget.closest("article").querySelector(".pic").classList.add("on");
       el.querySelector("audio").play();
     }
   });
