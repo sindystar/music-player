@@ -36,20 +36,39 @@ for (let el of lists) {
 
   //일시 정지 버튼 
 
-  load.addEventListener("click", (e) => {
+  pause.addEventListener("click", (e) => {
     let.isActive = e.currentTarget.closest("article").classList.contains("on");
     if (isActive) {
       //클릭한 타겟의(이벤트 리스너가 붙은 대상)가장 가까이 있는 아티클을 찾은후, 그안에 있는 .pic찾고 여기에 on을 붙인다.
       e.currentTarget.closest("article").querySelector(".pic").classList.add("on");
       el.querySelector("audio").load();
     }
+    
   })
+
+//load버튼
+
+load.addEventListener("click", (e) => {
+  let isActive = e.currentTarget.closest("article").classList.contains
+("on");
+if (isActive) {
+  //클릭한 타겟의(이벤트 리스너가 붙은 대상)가장 가까이 있는 아티클을 찾은 후, 그 안에 있는 .pic찾고 여기에 on을 붙인다.
+    e.currentTarget.closest("article").querySelector(".pic").classList.add("on");
+    el.querySelector("audio").load();
+}
+})
+
+
 }
 
+
 prev.addEventListener("click", () => {
+
+
   initMusic();
+
   num++;
-  frame.style.transform = `rotate(${num * dog}deg)`;
+  frame.style.transform = `rotate(${num * deg}deg)`;
   //아티클은 8개 - lists 배열에는 [0,1,2,3,4,5,6,7];
   //7,6,5,4,3,2,1,0 -> 7,6,5,4,3,2,1,0
   //현재 활성화 article순서값 결정 
