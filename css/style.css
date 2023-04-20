@@ -58,7 +58,7 @@ figure > p {
   letter-spacing: 2px;
   opacity: 0.8;
 }
-figure .brnPrev {
+figure .btnPrev {
   width: 60px;
   height: 60px;
   display: flex;
@@ -69,14 +69,14 @@ figure .brnPrev {
   left: 50%;
   transform: translate(-20vw, -50%);
 }
-figure .brnPrev span {
+figure .btnPrev span {
   font: 11px/1 "arial";
   color: #fff;
   transition: 0.5s;
   opacity: 1;
   transform: translateX(20%);
 }
-figure .brnPrev::before {
+figure .btnPrev::before {
   content: "";
   display: block;
   width: 100%;
@@ -89,7 +89,7 @@ figure .brnPrev::before {
   left: 0;
   transition: 0.5s;
 }
-figure .brnPrev::after {
+figure .btnPrev::after {
   content: "";
   display: block;
   width: 100%;
@@ -102,13 +102,13 @@ figure .brnPrev::after {
   left: 0;
   transition: 0.5s;
 }
-figure .brnPrev:hover::before {
+figure .btnPrev:hover::before {
   transform: rotate(-30deg);
 }
-figure .brnPrev:hover::after {
+figure .btnPrev:hover::after {
   transform: rotate(30deg);
 }
-figure .brnPrev:hover span {
+figure .btnPrev:hover span {
   transform: translateX(100%);
   opacity: 0;
 }
