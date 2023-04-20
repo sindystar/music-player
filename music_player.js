@@ -10,7 +10,7 @@ const deg = 45;
 let active = 0;
 const len = lists.lenth - 1;
 
-//article의 갯수 믾큼 반복을 돌면서 
+//article의 갯수만큼 반복을 돌면서 
 for (let el of lists) {
   //article의 위치값을 설정 => 45회전 하는 것들로 
   el.style.transform = `rotate(${deg * i}deg) translateY(-100vh)`;
@@ -36,7 +36,7 @@ for (let el of lists) {
 
   //일시 정지 버튼 
   pause.addEventListener("click", (e) => {
-    let.isActive = e.currentTarget.closest("article").classList.contains("on");
+    let isActive = e.currentTarget.closest("article").classList.contains("on");
 
     if (isActive) {
       //클릭한 타겟의(이벤트 리스너가 붙은 대상)가장 가까이 있는 아티클을 찾은후, 그안에 있는 .pic찾고 여기에 on을 붙인다.
